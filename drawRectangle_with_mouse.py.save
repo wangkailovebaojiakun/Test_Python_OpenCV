@@ -1,0 +1,31 @@
+import cv2
+import numpy as np
+import pylab
+
+refPt = []
+cropping = False
+def draw_rectangle(event,x,y,flags,param):
+    global refPt,cropping
+    if event==cv2.EVENT_LBUTTONDOWN:
+	refPt = [(x,y)]
+	cropping = True
+    elif event = cv2.EVENT_LBUTTONUP:
+	refPt.append((x,y))
+	cropping = False
+    cv2.rectangle(img,refPt[0],refPt[1],(255,0,0),5)
+    cv2.imshow("img",img)
+img = np.zeros((512,512,3),np.uint8)
+clone = img.copy()
+cv2.namedWidnow('img')
+cv2.setMouseCallback('img',
+while True:
+    cv2.imshow('img',img)
+ 
+print 'Please click 2 points'
+
+cv2.imshow('cv_img',img)
+
+
+
+cv2.waitKey()
+
