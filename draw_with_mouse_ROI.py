@@ -14,7 +14,7 @@ def draw_circle(event,x,y,flags,param):
 	    y = hight-105    
         cv2.rectangle(img2,(x-100,y-100),(x+100,y+100),(0,255,0),5)	
         
-img = cv2.imread('/home/wk/Pictures/sex.jpg')
+img = cv2.imread('/home/wangkai/Pictures/0.jpg')
 img2 = img.copy()
 width = img2.shape[0]
 hight = img2.shape[1]
