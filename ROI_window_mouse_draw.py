@@ -3,7 +3,7 @@ import numpy as np
 
 def draw_circle(event,x,y,flags,param):
     print x,y
-    if event == cv2.EVENT_MOUSEMOVE :
+    if event == cv2.EVENT_FLAG_LBUTTON :
         if x<= 105:
 	    x = 105
 	if x>= width-105:
