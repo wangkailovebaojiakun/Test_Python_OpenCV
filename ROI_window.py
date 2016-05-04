@@ -12,8 +12,8 @@ def draw_circle(event,x,y,flags,param):
 	    y = 105
 	if y>= hight-105:
 	    y = hight-105    
-        cv2.rectangle(img3,(x-100,y-100),(x+100,y+100),(255,255,255),-1)	
-        
+        img_ROI = img2[x-100:x+100,y-100:y+100]	
+        cv2.imshow('image',img_ROI)
 img = cv2.imread('/home/wangkai/Pictures/0.jpg')
 img2 = img.copy()
 img3 = np.zeros(img.shape,'uint8')
@@ -22,11 +22,10 @@ hight = img2.shape[0]
 
 a = []
 cv2.namedWindow('image')
-cv2.setMouseCallback('image',draw_circle,[img2,a])
+cv2.setMouseCallback('image',draw_circle)
 
 while (1):
-    frame = img3&img
-    cv2.imshow('image',frame)
+    
     img3 = np.zeros(img.shape,'uint8')
 
     if cv2.waitKey(20) & 0xFF ==27:
