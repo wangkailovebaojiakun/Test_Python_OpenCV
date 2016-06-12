@@ -43,8 +43,11 @@ else:
     
 impa = np.array(imgpoints,'float32')
 obpa = np.array(objpoints,'float32')
-
+#calibrateCamera(objectPoints, imagePoints, imageSize[, cameraMatrix[, distCoeffs[, rvecs[, tvecs[, flags[, criteria]]]]]]) 
+#-> retval, cameraMatrix, distCoeffs, rvecs, tvecs
+#mtx is the camera matrix;rves is Rotation vectors;tvecs is translation vectors;distCoeffs is Distortion Matrix;
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(obpa,impa, gray.shape[::-1],None,None)
+print 'ret:',ret
 #undistortion
 img = cv2.imread('left12.jpg')
 h, w = img.shape[:2]
